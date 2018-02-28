@@ -16,6 +16,7 @@ namespace SportsStore.Controllers
         }
 
         //public ViewResult List() => View(repository.Products);
+<<<<<<< HEAD
         public ViewResult List(string category, int productPage = 1)
          => View(new ProductsListViewModel
          {
@@ -24,13 +25,27 @@ namespace SportsStore.Controllers
              .OrderBy(p => p.ProductID)
              .Skip((productPage - 1) * PageSize)
              .Take(PageSize),
+=======
+        public ViewResult List(int productPage = 1)
+         => View(new ProductsListViewModel
+         {
+             Products = repository.Products
+         .OrderBy(p => p.ProductID)
+         .Skip((productPage - 1) * PageSize)
+         .Take(PageSize),
+>>>>>>> 5c457cbf8a04481d495ffbef9d79c3ba9b6ad65c
              PagingInfo = new PagingInfo
              {
                  CurrentPage = productPage,
                  ItemsPerPage = PageSize,
+<<<<<<< HEAD
                  TotalItems = category == null ? repository.Products.Count() : repository.Products.Where(e =>  e.Category == category).Count()
              },
              CurrentCategory=category
+=======
+                 TotalItems = repository.Products.Count()
+             }
+>>>>>>> 5c457cbf8a04481d495ffbef9d79c3ba9b6ad65c
          });
     }
 }

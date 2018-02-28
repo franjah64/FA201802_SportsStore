@@ -4,11 +4,21 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+<<<<<<< HEAD
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Prefer32Bit>true</Prefer32Bit>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
   </PropertyGroup>
+=======
+  <ItemGroup>
+    <Content Remove="Views\Shared\ProductSummary.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Views\Shared\ProductSummary.cshtml" />
+  </ItemGroup>
+>>>>>>> 5c457cbf8a04481d495ffbef9d79c3ba9b6ad65c
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
